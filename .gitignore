@@ -12,7 +12,7 @@ nutrisnap-e6cf9-firebase-adminsdk-xw1qk-8066cb8ec9.json
 # next.js
 /.next/
 /out/
-
+.env
 # production
 /build
 

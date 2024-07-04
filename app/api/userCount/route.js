@@ -2,14 +2,13 @@
 
 import admin from 'firebase-admin';
 
-// Initialize Firebase Admin SDK
-const serviceAccount = require('./nutrisnap-e6cf9-firebase-adminsdk-xw1qk-8066cb8ec9.json');
 
 if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-}
+    const serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_SDK_CREDENTIALS);
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  }
 
 export const GET = async (req) => {
   try {
