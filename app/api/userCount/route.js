@@ -24,13 +24,17 @@ export const GET = async (req) => {
 
     return new Response(JSON.stringify({ count: userCount }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' ,
+        'Cache-Control':'no-store',
+      },
     });
   } catch (error) {
     console.error('Error fetching user count:', error);
     return new Response(JSON.stringify({ error: 'Unable to fetch user count' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' ,
+        'Cache-Control':'no-store',
+      },
     });
   }
 };
