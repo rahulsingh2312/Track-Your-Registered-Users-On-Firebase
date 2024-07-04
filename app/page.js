@@ -8,7 +8,7 @@ const Home = () => {
   const [userCount, setUserCount] = useState('Loading...');
 
   useEffect(() => {
-    fetch('/api/userCount')
+    fetch('/api/userCount' , {cache : 'no-store'})
       .then(res => {
         if (!res.ok) {
           throw new Error('Failed to fetch user count');
